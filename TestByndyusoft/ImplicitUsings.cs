@@ -1,0 +1,9 @@
+﻿global using FluentAssertions;
+global using NUnit;
+global using TechTalk.SpecFlow;
+global using OpenQA.Selenium;
+global using OpenQA.Selenium.Chrome;
+global using TestByndyusoft.Support;
+global using System.Drawing;
+global using TestByndyusoft.Support.XPaths;
+global using NUnit.Framework;
