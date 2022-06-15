@@ -20,8 +20,27 @@ namespace TestByndyusoft.StepDefinitions
         [Given(@"I go to the right url")]
         public void GivenIGoToTheRightUrl()
         {
-            _driver.Navigate().GoToUrl(UrlStorage.MainWindow);
+            _driver.Navigate().GoToUrl(UrlStorage.Google);
         }
+
+        [Given(@"I enter ""([^""]*)"" in the search box and follow the first link")]
+        public void GivenIEnterInTheSearchBoxAndFollowTheFirstLink(string byndyusoft)
+        {
+            var inputSearch = _driver.FindElement(XPathGoogle.InputSearch);
+            inputSearch.SendKeys(byndyusoft);
+            var labelGoogle = _driver.FindElement(XPathGoogle.LabelGoogle);
+            labelGoogle.Click();
+            var buttonSearch = _driver.FindElement(XPathGoogle.ButtonSearch);
+            buttonSearch.Click();
+            var hrefByndyusoft = _driver.FindElement(XPathGoogle.HrefByndyusoft);
+            hrefByndyusoft.Click();
+            _driver.SwitchTo().Window(_driver.WindowHandles[1]);
+            string urlActual = _driver.Url;
+            string urlExpected = UrlStorage.MainWindow;
+            Assert.AreEqual(urlExpected, urlActual);
+        }
+
+
 
         [When(@"I find and click on the button Order a presentation")]
         public void WhenIFindAndClickOnTheButtonOrderAPresentation()

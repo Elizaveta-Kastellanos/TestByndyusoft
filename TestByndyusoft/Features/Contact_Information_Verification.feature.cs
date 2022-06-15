@@ -117,9 +117,12 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I go to the right url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
- testRunner.When("I find and click on the button Order a presentation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I enter \"Byndyusoft\" in the search box and follow the first link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
+ testRunner.When("I find and click on the button Order a presentation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 11
  testRunner.Then("I check the correctness of the phone number and mailbox, expected phone number \"8" +
                         " 800 775-15-21\" and e-mail \"sales@byndyusoft.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
